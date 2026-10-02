@@ -1,0 +1,28 @@
+body {
+    background-color:bisque;
+    text-align: center;
+    padding-top: 200px;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    color: hsl(318, 100%, 51%);
+    font-size: 40px;
+}
+
+p {
+    color: hsl(318, 100%, 51%);
+    font-size: 18px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+
+    color: hsl(318, 100%, 51%);
+    background-color: #ffd1dc;
+
+    border: 2px solid hsl(318, 100%, 51%);
+    border-radius: 8px;
+}
