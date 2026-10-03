@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Item Match Found - L&M</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="match-page">
+
+
+    <h1>🎉 Item Match Found! 🫶</h1>
+
+
+    <p>
+        Someone has reported losing an item that matches the one you found.
+    </p>
+
+
+    <div class="match-box">
+
+
+        <!-- ITEM NAME -->
+
+        <h2 id="foundMatchedItem"></h2>
+
+
+        <!-- DESCRIPTION -->
+
+        <h3>📝 Description</h3>
+
+        <p id="foundMatchedDescription"></p>
+
+
+        <!-- PICTURE -->
+
+        <h3>📷 Picture of the Lost Item</h3>
+
+        <img
+            id="foundMatchedPhoto"
+            class="matched-photo"
+            alt="Lost item picture"
+        >
+
+        <p id="foundMatchedPhotoMessage"></p>
+
+
+        <!-- WHERE IT WAS LOST -->
+
+        <h3>📍 Where It Was Lost</h3>
+
+        <p id="foundLostPlace"></p>
+
+
+        <!-- WHEN IT WAS LOST -->
+
+        <h3>🕐 When It Was Lost</h3>
+
+        <p id="foundLostDate"></p>
+
+        <p id="foundLostTime"></p>
+
+
+        <!-- CONTACT -->
+
+        <h3>📞 Contact Number</h3>
+
+        <p id="foundLostContact"></p>
+
+
+    </div>
+
+
+    <script>
+
+        var lostItem =
+            JSON.parse(
+                localStorage.getItem("currentLostItem")
+            );
+
+
+        if (lostItem) {
+
+
+            /* ITEM NAME */
+
+            document.getElementById(
+                "foundMatchedItem"
+            ).textContent =
+                lostItem.item || "Item name not provided";
+
+
+            /* DESCRIPTION */
+
+            document.getElementById(
+                "foundMatchedDescription"
+            ).textContent =
+                lostItem.description ||
+                "No description provided.";
+
+
+            /* PICTURE */
+
+            var photo =
+                document.getElementById(
+                    "foundMatchedPhoto"
+                );
+
+            var photoMessage =
+                document.getElementById(
+                    "foundMatchedPhotoMessage"
+                );
+
+
+            if (lostItem.photo) {
+
+                photo.src = lostItem.photo;
+
+                photo.style.display = "block";
+
+                photoMessage.textContent = "";
+
+            }
+
+            else {
+
+                photo.style.display = "none";
+
+                photoMessage.textContent =
+                    "No picture was provided by the person who lost it.";
+
+            }
+
+
+            /* WHERE IT WAS LOST */
+
+            document.getElementById(
+                "foundLostPlace"
+            ).textContent =
+                lostItem.place ||
+                "Not provided";
+
+
+            /* DATE LOST */
+
+            document.getElementById(
+                "foundLostDate"
+            ).textContent =
+                "📅 Date: " +
+                (
+                    lostItem.date ||
+                    "Not provided"
+                );
+
+
+            /* TIME LOST */
+
+            document.getElementById(
+                "foundLostTime"
+            ).textContent =
+                "🕐 Time: " +
+                (
+                    lostItem.time ||
+                    "Not provided"
+                );
+
+
+            /* CONTACT NUMBER */
+
+            document.getElementById(
+                "foundLostContact"
+            ).textContent =
+                lostItem.contact ||
+                "Not provided";
+
+        }
+
+        else {
+
+            document.getElementById(
+                "foundMatchedItem"
+            ).textContent =
+                "No matched item found.";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

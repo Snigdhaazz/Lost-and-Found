@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>I Lost Something - L&M</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="lost-page">
+
+    <h1>🔎 I Lost Something 👀</h1>
+
+    <p>Enter the details of the item you lost.</p>
+
+
+    <div class="lost-form">
+
+        <input
+            type="text"
+            id="lostItem"
+            placeholder="Item name"
+        >
+
+
+        <input
+            type="text"
+            id="lostPlace"
+            placeholder="Where did you lose it?"
+        >
+
+
+        <label class="photo-label">
+            🕐 When Did You Lose It
+        </label>
+
+
+        <input
+            type="date"
+            id="lostDate"
+        >
+
+
+        <input
+            type="time"
+            id="lostTime"
+        >
+
+
+        <textarea
+            id="lostDescription"
+            placeholder="Describe the item"
+        ></textarea>
+
+
+        <label class="photo-label">
+            📷 Upload A Picture Of The Item
+            <span class="optional-text">(Optional)</span>
+        </label>
+
+
+        <input
+            type="file"
+            id="lostPhoto"
+            accept="image/*"
+        >
+
+
+        <input
+            type="tel"
+            id="lostContact"
+            placeholder="Your contact number"
+        >
+
+
+        <button onclick="submitLost()">
+            Submit
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

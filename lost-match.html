@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Your Item Was Found - L&M</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="match-page">
+
+
+    <h1>🎉 Your Item Was Found! 🫶</h1>
+
+
+    <p>
+        Someone has reported finding an item that matches yours.
+    </p>
+
+
+
+    <div class="match-box">
+
+
+        <!-- ITEM NAME -->
+
+        <h2 id="lostMatchedItem"></h2>
+
+
+
+        <!-- DESCRIPTION -->
+
+        <h3>📝 Description</h3>
+
+        <p id="lostMatchedDescription"></p>
+
+
+
+        <!-- PICTURE -->
+
+        <h3>📷 Picture of the Found Item</h3>
+
+        <img
+            id="lostMatchedPhoto"
+            class="matched-photo"
+            alt="Found item picture"
+        >
+
+        <p id="lostMatchedPhotoMessage"></p>
+
+
+
+        <!-- WHERE IT WAS FOUND -->
+
+        <h3>📍 Where It Was Found</h3>
+
+        <p id="lostFoundPlace"></p>
+
+
+
+        <!-- WHEN IT WAS FOUND -->
+
+        <h3>🕐 When It Was Found</h3>
+
+        <p id="lostFoundDate"></p>
+
+        <p id="lostFoundTime"></p>
+
+
+
+        <!-- PICKUP INFORMATION -->
+
+        <h3>📦 Preferable Pickup Information</h3>
+
+        <p id="lostPickupDate"></p>
+
+        <p id="lostPickupTime"></p>
+
+
+
+        <!-- CONTACT -->
+
+        <h3>📞 Contact the Person Who Found It</h3>
+
+        <p id="lostFoundContact"></p>
+
+
+    </div>
+
+
+
+    <script>
+
+        var lostItem =
+            JSON.parse(
+                localStorage.getItem("currentLostItem")
+            );
+
+
+        var foundItem =
+            JSON.parse(
+                localStorage.getItem("currentFoundItem")
+            );
+
+
+
+        if (foundItem) {
+
+
+            // ITEM NAME
+
+            document.getElementById(
+                "lostMatchedItem"
+            ).textContent =
+                foundItem.item;
+
+
+
+            // DESCRIPTION
+
+            document.getElementById(
+                "lostMatchedDescription"
+            ).textContent =
+                foundItem.description ||
+                "No description provided.";
+
+
+
+            // PICTURE
+
+            var photo =
+                document.getElementById(
+                    "lostMatchedPhoto"
+                );
+
+
+            var photoMessage =
+                document.getElementById(
+                    "lostMatchedPhotoMessage"
+                );
+
+
+            if (foundItem.photo) {
+
+                photo.src =
+                    foundItem.photo;
+
+                photo.style.display =
+                    "block";
+
+                photoMessage.textContent =
+                    "";
+
+            }
+
+            else {
+
+                photo.style.display =
+                    "none";
+
+                photoMessage.textContent =
+                    "No picture was provided by the person who found it.";
+
+            }
+
+
+
+            // WHERE IT WAS FOUND
+
+            document.getElementById(
+                "lostFoundPlace"
+            ).textContent =
+                foundItem.place ||
+                "Not provided";
+
+
+
+            // DATE FOUND
+
+            document.getElementById(
+                "lostFoundDate"
+            ).textContent =
+                "📅 Date: " +
+                (foundItem.date ||
+                "Not provided");
+
+
+
+            // TIME FOUND
+
+            document.getElementById(
+                "lostFoundTime"
+            ).textContent =
+                "🕐 Time: " +
+                (foundItem.time ||
+                "Not provided");
+
+
+
+            // PREFERABLE PICKUP DATE
+
+            document.getElementById(
+                "lostPickupDate"
+            ).textContent =
+                "📅 Preferable Pickup Date: " +
+                (foundItem.pickupDate ||
+                "Any Date");
+
+
+
+            // PREFERABLE PICKUP TIME
+
+            document.getElementById(
+                "lostPickupTime"
+            ).textContent =
+                "🕐 Preferable Pickup Time: " +
+                (foundItem.pickupTime ||
+                "Not provided");
+
+
+
+            // FINDER CONTACT
+
+            document.getElementById(
+                "lostFoundContact"
+            ).textContent =
+                foundItem.contact ||
+                "Not provided";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

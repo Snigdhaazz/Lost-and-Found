@@ -1,28 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+
 body {
-    background-color:bisque;
+    background-color: bisque;
     text-align: center;
     padding-top: 200px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
+
+
+/* =========================
+   MAIN PAGE
+========================= */
 
 h1 {
     color: hsl(318, 100%, 51%);
     font-size: 40px;
 }
 
+
 p {
     color: hsl(318, 100%, 51%);
     font-size: 18px;
 }
 
+
 button {
     padding: 10px 20px;
+
     font-size: 16px;
+
     margin: 5px;
 
     color: hsl(318, 100%, 51%);
+
     background-color: #ffd1dc;
 
     border: 2px solid hsl(318, 100%, 51%);
+
     border-radius: 8px;
+
+    cursor: pointer;
+
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+button:hover {
+    background-color: #ffc1d2;
+}
+
+
+/* =========================
+   HOME PAGE BUTTONS
+========================= */
+
+.home-buttons {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.button-row {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+/* =========================
+   LOST AND FOUND FORMS
+========================= */
+
+.lost-form,
+.found-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.lost-form input,
+.lost-form textarea,
+.found-form input,
+.found-form textarea {
+
+    width: 300px;
+
+    padding: 10px;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+/* =========================
+   PHOTO UPLOAD
+========================= */
+
+.photo-label {
+
+    color: hsl(318, 100%, 51%);
+
+    font-size: 17px;
+
+    margin-top: 5px;
+}
+
+
+.optional-text {
+
+    font-size: 14px;
+
+    color: #b13c80;
+}
+
+
+input[type="file"] {
+
+    width: 300px;
+
+    padding: 8px;
+
+    box-sizing: border-box;
+
+    background-color: #fff5f7;
+
+    border: 1px solid hsl(318, 100%, 51%);
+
+    border-radius: 8px;
+
+    color: hsl(318, 100%, 51%);
+}
+
+
+/* =========================
+   CONTACT NUMBER
+========================= */
+
+input[type="tel"] {
+
+    width: 300px;
+
+    padding: 10px;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+/* =========================
+   LOST PAGE
+========================= */
+
+.lost-page {
+
+    padding-top: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* =========================
+   FOUND PAGE
+========================= */
+
+.found-page {
+
+    padding-top: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* =========================
+   PICKUP TIME
+========================= */
+
+.pickup-time-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 300px;
+}
+
+
+.pickup-time-row input {
+
+    width: 135px;
+
+    padding: 10px;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+}
+
+
+.to-text {
+
+    color: hsl(318, 100%, 51%);
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   MATCH PAGES
+========================= */
+
+.match-page {
+
+    padding-top: 50px;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.match-box {
+
+    width: 450px;
+
+    max-width: 90%;
+
+    padding: 30px;
+
+    background-color: #ffe4ec;
+
+    border: 2px solid hsl(318, 100%, 51%);
+
+    border-radius: 15px;
+
+    box-sizing: border-box;
+}
+
+
+.match-box h2 {
+
+    color: hsl(318, 100%, 51%);
+
+    font-size: 26px;
+}
+
+
+.match-box h3 {
+
+    color: hsl(318, 100%, 51%);
+
+    margin-top: 25px;
+}
+
+
+.match-box p {
+
+    color: #b13c80;
+
+    font-size: 17px;
+}
+
+
+.matched-photo {
+
+    width: 250px;
+
+    max-width: 90%;
+
+    max-height: 300px;
+
+    object-fit: contain;
+
+    margin: 10px auto;
+
+    border-radius: 10px;
+
+    border: 2px solid hsl(318, 100%, 51%);
+
+    display: none;
+}
+
+
+/* =========================
+   CHECK MATCH PAGES
+========================= */
+
+.check-page {
+
+    padding-top: 50px;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.reports-container {
+
+    width: 500px;
+
+    max-width: 90%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+
+.report-box {
+
+    width: 100%;
+
+    padding: 25px;
+
+    background-color: #ffe4ec;
+
+    border: 2px solid hsl(318, 100%, 51%);
+
+    border-radius: 15px;
+
+    box-sizing: border-box;
+}
+
+
+.report-box h2 {
+
+    color: hsl(318, 100%, 51%);
+
+    font-size: 24px;
+
+    margin-top: 0;
+}
+
+
+.report-box p {
+
+    color: #b13c80;
+
+    font-size: 17px;
+}
+
+
+.report-box button {
+
+    margin-top: 10px;
 }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> I Found Something - L&M</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="found-page">
+
+    <h1>✨ I Found Something 🔍</h1>
+
+    <p>Enter the details of the item you found.</p>
+
+
+    <div class="found-form">
+
+        <input
+            type="text"
+            id="foundItem"
+            placeholder="Item name"
+        >
+
+
+        <input
+            type="text"
+            id="foundPlace"
+            placeholder="Where did you find it?"
+        >
+
+
+        <label class="photo-label">
+            🕐 When Did You Found It
+        </label>
+
+
+        <input
+            type="date"
+            id="foundDate"
+        >
+
+
+        <input
+            type="time"
+            id="foundTime"
+        >
+
+
+        <textarea
+            id="foundDescription"
+            placeholder="Describe the item"
+        ></textarea>
+
+
+        <label class="photo-label">
+            📷 Upload A Picture Of The Item
+            <span class="optional-text">(Optional)</span>
+        </label>
+
+
+        <input
+            type="file"
+            id="foundPhoto"
+            accept="image/*"
+        >
+
+
+        <input
+            type="text"
+            id="pickupPlace"
+            placeholder="Where can the item be collected?"
+        >
+
+
+        <label class="photo-label">
+            📅 Preferable Pickup Date
+        </label>
+
+
+        <input
+            type="text"
+            id="pickupDate"
+            placeholder="e.g. 14 October, 14-16 October, or Any Date"
+        >
+
+
+        <label class="photo-label">
+            🕐 Preferable Pickup Time
+        </label>
+
+
+        <div class="pickup-time-row">
+
+            <input
+                type="time"
+                id="pickupStartTime"
+            >
+
+
+            <span class="to-text">
+                to
+            </span>
+
+
+            <input
+                type="time"
+                id="pickupEndTime"
+            >
+
+        </div>
+
+
+        <input
+            type="tel"
+            id="foundContact"
+            placeholder="Your contact number"
+        >
+
+
+        <button onclick="submitFound()">
+            Submit
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
